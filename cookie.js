@@ -3,6 +3,7 @@ let style = `
             #cookie_banner
         {
             display: none;
+            z-index=9999;
         }
         @import url(https://fonts.googleapis.com/css?family=Raleway:400,600);
 
