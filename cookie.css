@@ -1,7 +1,7 @@
 #cookie_banner
 {
     display: none;
-    z-index:1000;
+    z-index:9000;
 }
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,600);
 
