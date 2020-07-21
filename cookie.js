@@ -1,2 +1,630 @@
-let style='\n            #cookie_banner\n        {\n            display: none;\n        }\n        @import url(https://fonts.googleapis.com/css?family=Raleway:400,600);\n\n        .trust-widget-open:focus, button:focus {\n            outline: 1px solid !important;\n        }\n\n        .cookie-consent-group {\n            height: 30px;\n            width: 100%;\n            cursor: pointer;\n            display: block;\n            margin: 0px 10px 15px 0px;\n            padding: 5px 15px;\n            background: #ffffff;\n            border: solid 1px #eae9e9;\n            border-radius: 3px;\n            font-family: Raleway, sans-serif !important;\n            font-size: 14px;\n        }\n\n        .count-badge {\n            margin-right: 10px;\n            background: #eae9e9;\n            padding: 5px;\n            border-radius: 50%;\n            font-size: 11px;\n            line-height: 10px;\n            width: 11px;\n            display: inline-block;\n            text-align: center;\n            float: right;\n        }\n\n        .lower, .upper {\n            position: fixed\n        }\n\n        .intro-banner-btn, body {\n            font-family: Raleway, sans-serif !important\n        }\n\n        body {\n            background: 0 0;\n            margin: 0;\n            padding: 0\n        }\n\n        #sp-trust-badge {\n            border: 2px solid #fff !important;\n            border-radius: 4px !important;\n            transition: transform .2s ease-in-out, background-color .2s ease-in-out !important;\n            display: inline-block\n        }\n\n        .lower {\n            bottom: 0\n        }\n\n        .upper {\n            top: 0\n        }\n\n        a {\n            color: inherit\n        }\n\n        .group-content-text, .group-content-text p, .intro-banner-btn, .sp-cookie-banner-2 {\n            font-size: 14px !important;\n            margin: 0\n        }\n\n        .sp-banner-show {\n            width: 100%;\n            background: #fff\n        }\n\n        @media screen and (min-width: 1200px) {\n        .pba .contents, .sp-introduction-banner {\n                width: 1160px !important\n            }\n        }\n\n        .sp-introduction-banner {\n            padding: 25px 0 !important\n        }\n\n        .sp-cookie-banner-1 {\n            display: flex !important;\n            align-items: center !important;\n            margin: 0 25px 0 0;\n            justify-content: center !important\n        }\n\n        .sp-cookie-banner-1, .sp-cookie-banner-1 img {\n            float: left !important;\n            padding: 0\n        }\n\n        .sp-cookie-banner-2 {\n            width: calc(100% - 260px) !important;\n            float: left !important\n        }\n\n        .sp-cookie-banner-3 {\n            width: 190px !important;\n            float: right !important;\n            display: flex !important;\n            align-items: center !important;\n            justify-content: center !important\n        }\n\n        .intro-banner-btn {\n            margin: 0 15px !important;\n            padding: 16px 14px !important;\n            float: right !important;\n            cursor: pointer !important;\n            line-height: 16px !important;\n            font-weight: 600;\n            width: 130px !important;\n            border: none !important;\n            text-shadow: none;\n            background-image: none;\n            transition: transform .2s ease-in-out, background-color .2s ease-in-out;\n            -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, .3);\n            -moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, .3);\n            box-shadow: 0 0 10px 0 rgba(0, 0, 0, .3)\n        }\n\n        .sp-close-button {\n            border-radius: 50%;\n            border: 0;\n            color: #525151;\n            cursor: pointer;\n            font-size: 26px;\n            font-weight: 600;\n            height: 26px;\n            line-height: 1px;\n            outline: 0;\n            padding: 0;\n            text-align: center;\n            transition: transform .1s ease-in-out, background-color .1s ease-in-out;\n            width: 26px;\n            z-index: 1;\n            margin: 0;\n            background: 0 0\n        }\n\n        .sp-close-button img {\n            margin: 0\n        }\n\n        @media screen and (min-device-width: 320px) and (max-device-width: 500px) {\n        .count-badge {\n                display: none;\n            }\n\n        .sp-introduction-banner {\n                padding: 20px !important;\n                width: calc(100% - 40px) !important\n            }\n\n        .sp-cookie-banner-1 {\n                display: none !important\n            }\n\n        .details-cookie {\n                margin: 0 auto !important;\n                position: initial !important;\n                box-shadow: none !important\n            }\n\n        .sp-cookie-banner-3 {\n                width: 100% !important;\n                float: right !important;\n                display: flex !important;\n                align-items: center !important;\n                justify-content: center !important;\n                margin-top: 15px\n            }\n\n        .sp-cookie-banner-2 > a {\n                color: inherit !important;\n                text-decoration: none !important;\n                border-bottom: solid 1px !important\n            }\n\n        .sp-cookie-banner-2 {\n                width: 100% !important;\n                float: left !important\n            }\n\n        .footer_buttons button {\n                width: auto !important;\n                float: left !important;\n                min-width: 130px\n            }\n\n        .pba .contents {\n                width: calc(100% - 40px) !important\n            }\n\n        .privacy_banner_advanced_header {\n                padding: 0 20px !important\n            }\n\n        .pba {\n                max-height: 41vh !important\n            }\n        }\n\n        .trust-widget-open {\n            border-bottom: solid 1px;\n            border-color: inherit;\n            cursor: pointer\n        }\n\n        .privacy_banner_advanced {\n            margin: 0 auto;\n            background: #fff\n        }\n\n        .privacy_banner_advanced_header {\n            overflow: auto;\n            margin: 0 auto;\n            text-align: center;\n            padding: 5px 0\n        }\n\n        @media screen and (min-width: 1200px) {\n        .pba .contents {\n                width: 860px\n            }\n\n        .privacy_banner_advanced_header {\n                width: 860px !important\n            }\n        }\n\n        @media screen and (min-width: 1024px) and (max-width: 1024px) {\n        .privacy_banner_advanced_header {\n                padding: 5px 20px;\n                width: 800px\n            }\n\n        .pba {\n                padding: 25px 20px !important\n            }\n\n        .sp-introduction-banner {\n                padding: 25px 19px !important;\n                width: 900px\n            }\n        }\n\n        .privacy_banner_advanced_header .checboxes {\n            padding: 4px 0px;\n            font-size: 14px\n        }\n\n        .privacy_banner_advanced_header label {\n            text-transform: capitalize;\n            margin-right: 25px;\n            cursor: pointer\n        }\n\n        .details-cookie {\n            text-transform: capitalize;\n            cursor: pointer;\n            background: #f5f5f5;\n            min-width: 87px !important;\n            font-weight: 400;\n            border-radius: 4px;\n            font-family: inherit;\n            font-size: 14px;\n            line-height: 28px;\n            border: solid 1px #eae9e9;\n        }\n\n        .details-cookie span {\n            border: solid #9e9e9e;\n            border-width: 0 2px 2px 0;\n            display: inline-block;\n            padding: 4px;\n            vertical-align: text-top;\n            margin-left: 5px\n        }\n\n        .content_body .div_category_item, .pba {\n            display: none\n        }\n\n        .details-cookie span.down {\n            transform: rotate(45deg);\n            -webkit-transform: rotate(45deg)\n        }\n\n        .details-cookie span.up {\n            transform: rotate(-135deg);\n            -webkit-transform: rotate(-135deg);\n            vertical-align: text-bottom\n        }\n\n        .pba {\n            font-size: 14px;\n            background: #f5f5f5;\n            padding: 25px 0;\n            max-height: 65vh;\n            overflow-x: auto\n        }\n\n        .pba .footer_buttons {\n            margin-top: 25px\n        }\n\n        .pba .contents {\n            margin: 0 auto;\n            width: 800px\n        }\n\n        .contents p {\n            margin: 0\n        }\n\n        .contents .content-intro-1 {\n            font-size: 14px;\n            line-height: 23px;\n            margin: 0 0 15px\n        }\n\n        .pba .contents ul {\n            list-style-type: none;\n            padding: 0;\n            margin: 0px;\n            width: 25%;\n            float: left;\n            background: #fff\n        }\n\n        ul li {\n            text-transform: capitalize;\n            padding: 10px;\n            cursor: pointer;\n            background: #f5f5f5;\n            border-bottom: solid 1px #eae9e9;\n        }\n\n        ul li.active {\n            text-transform: capitalize;\n            background: #fff;\n        }\n\n        .content_body {\n            font-size: 14px;\n            line-height: 23px;\n            float: left;\n            background: #fff;\n            width: 75%;\n            height: 220px;\n            overflow-y: auto;\n        }\n\n        .content_body .div_category_item.active {\n            display: block;\n            padding: 10px\n        }\n\n        .content_body table {\n            margin: 15px 0;\n            text-align: left;\n            width: 100%\n        }\n\n        .content_body table tr td, .content_body table tr th {\n            padding: 5px 0;\n            font-size: 14px;\n            line-height: 23px\n        }\n\n        .footer_buttons button {\n            float: none !important;\n            margin: 0 20px 0 0 !important\n        }\n\n        .sp-slider-switch a {\n            color: #45413e;\n                text-decoration: none;\n                line-height: 16px;\n                border-bottom: solid 1px rgba(69, 65, 62, .59)\n        }\n\n        .sp-slider-switch .switch-secure {\n            position: relative;\n            display: inline-block;\n            width: 45px;\n            height: 15px\n        }\n\n        .sp-slider-switch .switch-secure input {\n                display: none\n            }\n\n            .sp-slider-switch .switch {\n                    position: relative;\n                    display: inline-block;\n                    width: 45px;\n                    height: 15px\n                }\n\n                .sp-slider-switch .switch input {\n                        display: none\n                    }\n\n                    .sp-slider-switch .slider {\n                            overflow: inherit;\n                            position: absolute;\n                            cursor: pointer;\n                            top: 0;\n                            left: 0;\n                            right: 0;\n                            bottom: 0;\n                            background-color: #ccc;\n                            -webkit-transition: .4s;\n                            transition: .4s\n                        }\n\n                        .sp-slider-switch .slider:before {\n                                position: absolute;\n                                height: 20px;\n                                width: 20px;\n                                left: 0;\n                                bottom: -2px;\n                                background-color: #fff;\n                                -webkit-transition: .4s;\n                                transition: .4s;\n                                box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .4)\n                            }\n\n                            .sp-slider-switch input:checked + .slider {\n                                    background-color: rgba(4, 166, 0, 0.42)\n                                }\n\n                                .sp-slider-switch input:focus + .slider {\n                                        box-shadow: 0 0 1px #04a600\n                                    }\n\n                                    .sp-slider-switch input:checked + .slider:before {\n                                            -webkit-transform: translateX(26px);\n                                            -ms-transform: translateX(26px);\n                                            transform: translateX(26px);\n                                            background: #04a600\n                                        }\n\n                                        .sp-slider-switch .slider.sp-round {\n                                                border-radius: 34px\n                                            }\n\n                                            .sp-slider-switch .slider.sp-round:before {\n                                                    border-radius: 50%\n                                                }\n\n                                                .sp-loader:before, .sp-slider-switch .slider:before, .sp-slider:before {\n                                                        content: ""\n                                                    }\n\n                                                    .sp-banner-footer {\n                                                        background: #fff;\n                                                        overflow: auto;\n                                                        padding: 15px 30px;\n                                                        border-top: solid .5px #ccc;\n                                                        font-family: Raleway, sans-serif !important\n                                                    }\n\n                                                    .plugins-wrapper {\n                                                        overflow: hidden;\n                                                        background: #f5f5f5;\n                                                        border: solid 1px #eae9e9;\n                                                        border-radius: 3px;\n                                                    }\n\n                                                    .container {\n                                                        position: relative;\n                                                        padding-left: 20px;\n                                                        cursor: pointer;\n                                                        -webkit-user-select: none;\n                                                        -moz-user-select: none;\n                                                        -ms-user-select: none;\n                                                        user-select: none\n                                                    }\n\n                                                    .container input {\n                                                        position: absolute;\n                                                        opacity: 0;\n                                                        cursor: pointer;\n                                                        height: 0;\n                                                        width: 0\n                                                    }\n\n                                                    .checkmark {\n                                                        position: absolute;\n                                                        top: -1;\n                                                        left: 0;\n                                                        height: 18px;\n                                                        width: 18px;\n                                                        background-color: #eee;\n                                                        border-radius: 4px;\n                                                    }\n\n                                                    .container:hover input ~ .checkmark {\n                                                        background-color: #ccc\n                                                    }\n\n                                                    .container input:checked ~ .checkmark {\n                                                        background-color: #04a600\n                                                    }\n\n                                                    .checkmark:after {\n                                                        content: "";\n                                                        position: absolute;\n                                                        display: none\n                                                    }\n\n                                                    .container input:checked ~ .checkmark:after {\n                                                        display: block\n                                                    }\n\n                                                    .container .checkmark:after {\n                                                        left: 6px;\n                                                        top: 2px;\n                                                        width: 3px;\n                                                        height: 8px;\n                                                        border: solid #fff;\n                                                        border-width: 0 3px 3px 0;\n                                                        -webkit-transform: rotate(45deg);\n                                                        -ms-transform: rotate(45deg);\n                                                        transform: rotate(45deg)\n                                                    }\n\n                                                    .disabled:after {\n                                                        border-color: rgba(255, 255, 255, 0.44) !important;\n                                                    }\n\n                                                    .iab-buttons {\n                                                        cursor: pointer;\n                                                        line-height: 30px;\n                                                        margin: 0px 15px;\n                                                        text-decoration: underline;\n                                                        font-size: 14px;\n                                                        color: #000;\n                                                    }\n\n                                                    @media screen and (max-width: 767px) {\n                                                    .checboxes label {\n                                                            margin-right: 20px;\n                                                            margin-top: 10px;\n                                                            margin-bottom: 10px;\n                                                            display: inline-block\n                                                        }\n\n                                                    .privacy_banner_advanced_header {\n                                                            text-align: inherit\n                                                        }\n                                                    }\n\n                                                    @media screen and (max-width: 767px) {\n                                                    .iab-buttons {\n                                                            line-height: 25px !important;\n                                                            margin: 0px 10px;\n                                                            font-size: 10px;\n                                                        }\n\n                                                    .details-cookie {\n                                                            margin: 5px 0 5px calc(50% - 45px) !important;\n                                                        }\n                                                    }';function $(n){return document.getElementById(n)}function saveconsent(n){1==n&&localStorage.setItem("cookie-warner","1"),document.getElementById("cookie_banner").style.display="none"}window.addEventListener("load",()=>{let n=document.createElement("style");n.type="text/css",n.innerText=style;let t=localStorage.getItem("cookie-warner");if(document.head.appendChild(n),null!=t)$("cookie_banner").style.display="none";else{let n=document.createElement("div");n.id="cookie_banner",n.className="sp-banner-show lower",document.body.appendChild(n),console.log(n),$("cookie_banner").innerHTML='<div id="grouped-pageload-Banner">\n        <div style="overflow: auto; background-color:#00965d; color: #ffffff;">\n            <div class="sp-introduction-banner" style="margin:0 auto;overflow:auto;padding: 10px 0px;">\n                <div class="group-content-text">\n                    <div class="sp-cookie-banner-2"\n                         style="line-height:25px;color:#ffffff;font-size: 16px;color:#ffffff">\n                        <p>Sütiket használunk az oldalunk megfelelő működésének biztosításához, a tartalmak és hirdetések személyre szabásához, közösségi média funkciók felkínálásához és az oldalunk látogatottságának elemzéséhez. Oldalhasználattal kapcsolatos információkat is megosztunk a közösségi média területén tevékenykedő, a hirdetési és elemzési szolgáltatásokat nyújtó partnereinkkel.</p>\n                        </div>\n                    <div class="sp-cookie-banner-3">\n                        <button class="intro-banner-btn" tabindex="1"\n                                onclick="saveconsent(true)"\n                                style="background-color: #7ebf4b; color:#ffffff">OK\n                        </button>\n                        <button class="sp-close-button" tabindex="2"\n                                onclick="saveconsent()">\n                            <img alt="Reject" style="width:26px;"\n                                 src="https://app.secureprivacy.ai/assets/images/silver-close-button.png">\n                        </button>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>',document.getElementById("cookie_banner").style.display="block"}});
-   
+
+let style = `
+            #cookie_banner
+        {
+            display: none;
+        }
+        @import url(https://fonts.googleapis.com/css?family=Raleway:400,600);
+
+        .trust-widget-open:focus, button:focus {
+            outline: 1px solid !important;
+        }
+
+        .cookie-consent-group {
+            height: 30px;
+            width: 100%;
+            cursor: pointer;
+            display: block;
+            margin: 0px 10px 15px 0px;
+            padding: 5px 15px;
+            background: #ffffff;
+            border: solid 1px #eae9e9;
+            border-radius: 3px;
+            font-family: Raleway, sans-serif !important;
+            font-size: 14px;
+        }
+
+        .count-badge {
+            margin-right: 10px;
+            background: #eae9e9;
+            padding: 5px;
+            border-radius: 50%;
+            font-size: 11px;
+            line-height: 10px;
+            width: 11px;
+            display: inline-block;
+            text-align: center;
+            float: right;
+        }
+
+        .lower, .upper {
+            position: fixed
+        }
+
+        .intro-banner-btn, body {
+            font-family: Raleway, sans-serif !important
+        }
+
+        body {
+            background: 0 0;
+            margin: 0;
+            padding: 0
+        }
+
+        #sp-trust-badge {
+            border: 2px solid #fff !important;
+            border-radius: 4px !important;
+            transition: transform .2s ease-in-out, background-color .2s ease-in-out !important;
+            display: inline-block
+        }
+
+        .lower {
+            bottom: 0
+        }
+
+        .upper {
+            top: 0
+        }
+
+        a {
+            color: inherit
+        }
+
+        .group-content-text, .group-content-text p, .intro-banner-btn, .sp-cookie-banner-2 {
+            font-size: 14px !important;
+            margin: 0
+        }
+
+        .sp-banner-show {
+            width: 100%;
+            background: #fff
+        }
+
+        @media screen and (min-width: 1200px) {
+        .pba .contents, .sp-introduction-banner {
+                width: 1160px !important
+            }
+        }
+
+        .sp-introduction-banner {
+            padding: 25px 0 !important
+        }
+
+        .sp-cookie-banner-1 {
+            display: flex !important;
+            align-items: center !important;
+            margin: 0 25px 0 0;
+            justify-content: center !important
+        }
+
+        .sp-cookie-banner-1, .sp-cookie-banner-1 img {
+            float: left !important;
+            padding: 0
+        }
+
+        .sp-cookie-banner-2 {
+            width: calc(100% - 260px) !important;
+            float: left !important
+        }
+
+        .sp-cookie-banner-3 {
+            width: 190px !important;
+            float: right !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important
+        }
+
+        .intro-banner-btn {
+            margin: 0 15px !important;
+            padding: 16px 14px !important;
+            float: right !important;
+            cursor: pointer !important;
+            line-height: 16px !important;
+            font-weight: 600;
+            width: 130px !important;
+            border: none !important;
+            text-shadow: none;
+            background-image: none;
+            transition: transform .2s ease-in-out, background-color .2s ease-in-out;
+            -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, .3);
+            -moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, .3);
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, .3)
+        }
+
+        .sp-close-button {
+            border-radius: 50%;
+            border: 0;
+            color: #525151;
+            cursor: pointer;
+            font-size: 26px;
+            font-weight: 600;
+            height: 26px;
+            line-height: 1px;
+            outline: 0;
+            padding: 0;
+            text-align: center;
+            transition: transform .1s ease-in-out, background-color .1s ease-in-out;
+            width: 26px;
+            z-index: 1;
+            margin: 0;
+            background: 0 0
+        }
+
+        .sp-close-button img {
+            margin: 0
+        }
+
+        @media screen and (min-device-width: 320px) and (max-device-width: 500px) {
+        .count-badge {
+                display: none;
+            }
+
+        .sp-introduction-banner {
+                padding: 20px !important;
+                width: calc(100% - 40px) !important
+            }
+
+        .sp-cookie-banner-1 {
+                display: none !important
+            }
+
+        .details-cookie {
+                margin: 0 auto !important;
+                position: initial !important;
+                box-shadow: none !important
+            }
+
+        .sp-cookie-banner-3 {
+                width: 100% !important;
+                float: right !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                margin-top: 15px
+            }
+
+        .sp-cookie-banner-2 > a {
+                color: inherit !important;
+                text-decoration: none !important;
+                border-bottom: solid 1px !important
+            }
+
+        .sp-cookie-banner-2 {
+                width: 100% !important;
+                float: left !important
+            }
+
+        .footer_buttons button {
+                width: auto !important;
+                float: left !important;
+                min-width: 130px
+            }
+
+        .pba .contents {
+                width: calc(100% - 40px) !important
+            }
+
+        .privacy_banner_advanced_header {
+                padding: 0 20px !important
+            }
+
+        .pba {
+                max-height: 41vh !important
+            }
+        }
+
+        .trust-widget-open {
+            border-bottom: solid 1px;
+            border-color: inherit;
+            cursor: pointer
+        }
+
+        .privacy_banner_advanced {
+            margin: 0 auto;
+            background: #fff
+        }
+
+        .privacy_banner_advanced_header {
+            overflow: auto;
+            margin: 0 auto;
+            text-align: center;
+            padding: 5px 0
+        }
+
+        @media screen and (min-width: 1200px) {
+        .pba .contents {
+                width: 860px
+            }
+
+        .privacy_banner_advanced_header {
+                width: 860px !important
+            }
+        }
+
+        @media screen and (min-width: 1024px) and (max-width: 1024px) {
+        .privacy_banner_advanced_header {
+                padding: 5px 20px;
+                width: 800px
+            }
+
+        .pba {
+                padding: 25px 20px !important
+            }
+
+        .sp-introduction-banner {
+                padding: 25px 19px !important;
+                width: 900px
+            }
+        }
+
+        .privacy_banner_advanced_header .checboxes {
+            padding: 4px 0px;
+            font-size: 14px
+        }
+
+        .privacy_banner_advanced_header label {
+            text-transform: capitalize;
+            margin-right: 25px;
+            cursor: pointer
+        }
+
+        .details-cookie {
+            text-transform: capitalize;
+            cursor: pointer;
+            background: #f5f5f5;
+            min-width: 87px !important;
+            font-weight: 400;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 14px;
+            line-height: 28px;
+            border: solid 1px #eae9e9;
+        }
+
+        .details-cookie span {
+            border: solid #9e9e9e;
+            border-width: 0 2px 2px 0;
+            display: inline-block;
+            padding: 4px;
+            vertical-align: text-top;
+            margin-left: 5px
+        }
+
+        .content_body .div_category_item, .pba {
+            display: none
+        }
+
+        .details-cookie span.down {
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg)
+        }
+
+        .details-cookie span.up {
+            transform: rotate(-135deg);
+            -webkit-transform: rotate(-135deg);
+            vertical-align: text-bottom
+        }
+
+        .pba {
+            font-size: 14px;
+            background: #f5f5f5;
+            padding: 25px 0;
+            max-height: 65vh;
+            overflow-x: auto
+        }
+
+        .pba .footer_buttons {
+            margin-top: 25px
+        }
+
+        .pba .contents {
+            margin: 0 auto;
+            width: 800px
+        }
+
+        .contents p {
+            margin: 0
+        }
+
+        .contents .content-intro-1 {
+            font-size: 14px;
+            line-height: 23px;
+            margin: 0 0 15px
+        }
+
+        .pba .contents ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0px;
+            width: 25%;
+            float: left;
+            background: #fff
+        }
+
+        ul li {
+            text-transform: capitalize;
+            padding: 10px;
+            cursor: pointer;
+            background: #f5f5f5;
+            border-bottom: solid 1px #eae9e9;
+        }
+
+        ul li.active {
+            text-transform: capitalize;
+            background: #fff;
+        }
+
+        .content_body {
+            font-size: 14px;
+            line-height: 23px;
+            float: left;
+            background: #fff;
+            width: 75%;
+            height: 220px;
+            overflow-y: auto;
+        }
+
+        .content_body .div_category_item.active {
+            display: block;
+            padding: 10px
+        }
+
+        .content_body table {
+            margin: 15px 0;
+            text-align: left;
+            width: 100%
+        }
+
+        .content_body table tr td, .content_body table tr th {
+            padding: 5px 0;
+            font-size: 14px;
+            line-height: 23px
+        }
+
+        .footer_buttons button {
+            float: none !important;
+            margin: 0 20px 0 0 !important
+        }
+
+        .sp-slider-switch a {
+            color: #45413e;
+                text-decoration: none;
+                line-height: 16px;
+                border-bottom: solid 1px rgba(69, 65, 62, .59)
+        }
+
+        .sp-slider-switch .switch-secure {
+            position: relative;
+            display: inline-block;
+            width: 45px;
+            height: 15px
+        }
+
+        .sp-slider-switch .switch-secure input {
+                display: none
+            }
+
+            .sp-slider-switch .switch {
+                    position: relative;
+                    display: inline-block;
+                    width: 45px;
+                    height: 15px
+                }
+
+                .sp-slider-switch .switch input {
+                        display: none
+                    }
+
+                    .sp-slider-switch .slider {
+                            overflow: inherit;
+                            position: absolute;
+                            cursor: pointer;
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                            bottom: 0;
+                            background-color: #ccc;
+                            -webkit-transition: .4s;
+                            transition: .4s
+                        }
+
+                        .sp-slider-switch .slider:before {
+                                position: absolute;
+                                height: 20px;
+                                width: 20px;
+                                left: 0;
+                                bottom: -2px;
+                                background-color: #fff;
+                                -webkit-transition: .4s;
+                                transition: .4s;
+                                box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .4)
+                            }
+
+                            .sp-slider-switch input:checked + .slider {
+                                    background-color: rgba(4, 166, 0, 0.42)
+                                }
+
+                                .sp-slider-switch input:focus + .slider {
+                                        box-shadow: 0 0 1px #04a600
+                                    }
+
+                                    .sp-slider-switch input:checked + .slider:before {
+                                            -webkit-transform: translateX(26px);
+                                            -ms-transform: translateX(26px);
+                                            transform: translateX(26px);
+                                            background: #04a600
+                                        }
+
+                                        .sp-slider-switch .slider.sp-round {
+                                                border-radius: 34px
+                                            }
+
+                                            .sp-slider-switch .slider.sp-round:before {
+                                                    border-radius: 50%
+                                                }
+
+                                                .sp-loader:before, .sp-slider-switch .slider:before, .sp-slider:before {
+                                                        content: ""
+                                                    }
+
+                                                    .sp-banner-footer {
+                                                        background: #fff;
+                                                        overflow: auto;
+                                                        padding: 15px 30px;
+                                                        border-top: solid .5px #ccc;
+                                                        font-family: Raleway, sans-serif !important
+                                                    }
+
+                                                    .plugins-wrapper {
+                                                        overflow: hidden;
+                                                        background: #f5f5f5;
+                                                        border: solid 1px #eae9e9;
+                                                        border-radius: 3px;
+                                                    }
+
+                                                    .container {
+                                                        position: relative;
+                                                        padding-left: 20px;
+                                                        cursor: pointer;
+                                                        -webkit-user-select: none;
+                                                        -moz-user-select: none;
+                                                        -ms-user-select: none;
+                                                        user-select: none
+                                                    }
+
+                                                    .container input {
+                                                        position: absolute;
+                                                        opacity: 0;
+                                                        cursor: pointer;
+                                                        height: 0;
+                                                        width: 0
+                                                    }
+
+                                                    .checkmark {
+                                                        position: absolute;
+                                                        top: -1;
+                                                        left: 0;
+                                                        height: 18px;
+                                                        width: 18px;
+                                                        background-color: #eee;
+                                                        border-radius: 4px;
+                                                    }
+
+                                                    .container:hover input ~ .checkmark {
+                                                        background-color: #ccc
+                                                    }
+
+                                                    .container input:checked ~ .checkmark {
+                                                        background-color: #04a600
+                                                    }
+
+                                                    .checkmark:after {
+                                                        content: "";
+                                                        position: absolute;
+                                                        display: none
+                                                    }
+
+                                                    .container input:checked ~ .checkmark:after {
+                                                        display: block
+                                                    }
+
+                                                    .container .checkmark:after {
+                                                        left: 6px;
+                                                        top: 2px;
+                                                        width: 3px;
+                                                        height: 8px;
+                                                        border: solid #fff;
+                                                        border-width: 0 3px 3px 0;
+                                                        -webkit-transform: rotate(45deg);
+                                                        -ms-transform: rotate(45deg);
+                                                        transform: rotate(45deg)
+                                                    }
+
+                                                    .disabled:after {
+                                                        border-color: rgba(255, 255, 255, 0.44) !important;
+                                                    }
+
+                                                    .iab-buttons {
+                                                        cursor: pointer;
+                                                        line-height: 30px;
+                                                        margin: 0px 15px;
+                                                        text-decoration: underline;
+                                                        font-size: 14px;
+                                                        color: #000;
+                                                    }
+
+                                                    @media screen and (max-width: 767px) {
+                                                    .checboxes label {
+                                                            margin-right: 20px;
+                                                            margin-top: 10px;
+                                                            margin-bottom: 10px;
+                                                            display: inline-block
+                                                        }
+
+                                                    .privacy_banner_advanced_header {
+                                                            text-align: inherit
+                                                        }
+                                                    }
+
+                                                    @media screen and (max-width: 767px) {
+                                                    .iab-buttons {
+                                                            line-height: 25px !important;
+                                                            margin: 0px 10px;
+                                                            font-size: 10px;
+                                                        }
+
+                                                    .details-cookie {
+                                                            margin: 5px 0 5px calc(50% - 45px) !important;
+                                                        }
+                                                    }`;
+function $ (id){
+    return document.getElementById(id);
+}
+
+window.addEventListener('load', ()=>{
+    let styleSheet=document.createElement("style");
+    styleSheet.type="text/css";
+    styleSheet.innerText=style;
+    let x = localStorage.getItem("cookie-warner");
+    //document.getElementsByTagName("header");
+    document.head.appendChild(styleSheet);
+
+    if(x!=null){
+        $("cookie_banner").style.display="none";}
+    else {
+        let warner=document.createElement("div");
+        warner.id="cookie_banner";
+        warner.className="sp-banner-show lower";
+        document.body.appendChild(warner);
+        console.log(warner);
+        $("cookie_banner").innerHTML="<div id=\"grouped-pageload-Banner\">\n" +
+            "        <div style=\"overflow: auto; background-color:#00965d; color: #ffffff;\">\n" +
+            "            <div class=\"sp-introduction-banner\" style=\"margin:0 auto;overflow:auto;padding: 10px 0px;\">\n" +
+            "                <div class=\"group-content-text\">\n" +
+            "                    <div class=\"sp-cookie-banner-2\"\n" +
+            "                         style=\"line-height:25px;color:#ffffff;font-size: 16px;color:#ffffff\">\n" +
+            "                        <p>Sütiket használunk az oldalunk megfelelő működésének biztosításához, a tartalmak és hirdetések személyre szabásához, közösségi média funkciók felkínálásához és az oldalunk látogatottságának elemzéséhez. Oldalhasználattal kapcsolatos információkat is megosztunk a közösségi média területén tevékenykedő, a hirdetési és elemzési szolgáltatásokat nyújtó partnereinkkel.</p>\n" +
+            "                        </div>\n" +
+            "                    <div class=\"sp-cookie-banner-3\">\n" +
+            "                        <button class=\"intro-banner-btn\" tabindex=\"1\"\n" +
+            "                                onclick=\"saveconsent(true)\"\n" +
+            "                                style=\"background-color: #7ebf4b; color:#ffffff\">OK\n" +
+            "                        </button>\n" +
+            "                        <button class=\"sp-close-button\" tabindex=\"2\"\n" +
+            "                                onclick=\"saveconsent()\">\n" +
+            "                            <img alt=\"Reject\" style=\"width:26px;\"\n" +
+            "                                 src=\"https://raw.githubusercontent.com/karpad2/bgc_cookie/master/silver-close-button.png\">\n" +
+            "                        </button>\n" +
+            "                    </div>\n" +
+            "                </div>\n" +
+            "            </div>\n" +
+            "        </div>\n" +
+            "    </div>";
+        document.getElementById("cookie_banner").style.display = "block";}
+})
+function saveconsent(_t)
+{
+    if(_t==true) localStorage.setItem("cookie-warner","1");
+    document.getElementById("cookie_banner").style.display="none";
+}
