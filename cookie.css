@@ -490,14 +490,14 @@ ul li.active {
     -ms-user-select: none;
     user-select: none
 }
-
+/*
 .container input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
     height: 0;
     width: 0
-}
+}*/
 
 .checkmark {
     position: absolute;
