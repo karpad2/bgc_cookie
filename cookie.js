@@ -1,6 +1,3 @@
-
-let style = `
-         `;
 function $ (id){
     return document.getElementById(id);
 }
@@ -14,7 +11,8 @@ window.addEventListener('load', ()=>{
     document.head.appendChild(styleSheet);
 
     if(x!=null){
-        $("cookie_banner").style.display="none";}
+      //  $("cookie_banner").style.display="none";
+        }
     else {
         let warner=document.createElement("div");
         warner.id="cookie_banner";
@@ -33,11 +31,6 @@ window.addEventListener('load', ()=>{
             "                        <button class=\"intro-banner-btn\" tabindex=\"1\"\n" +
             "                                onclick=\"saveconsent(true)\"\n" +
             "                                style=\"background-color: #7ebf4b; color:#ffffff\">OK\n" +
-            "                        </button>\n" +
-            "                        <button class=\"sp-close-button\" tabindex=\"2\"\n" +
-            "                                onclick=\"saveconsent()\">\n" +
-            "                            <img alt=\"Reject\" style=\"width:26px;\"\n" +
-            "                                 src=\"https://raw.githubusercontent.com/karpad2/bgc_cookie/master/silver-close-button.png\">\n" +
             "                        </button>\n" +
             "                    </div>\n" +
             "                </div>\n" +
