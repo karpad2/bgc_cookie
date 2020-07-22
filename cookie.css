@@ -403,9 +403,7 @@ ul li.active {
     height: 15px
 }
 
-.sp-slider-switch .switch-secure input {
-    display: none
-}
+
 
 .sp-slider-switch .switch {
     position: relative;
@@ -414,9 +412,7 @@ ul li.active {
     height: 15px
 }
 
-.sp-slider-switch .switch input {
-    display: none
-}
+
 
 .sp-slider-switch .slider {
     overflow: inherit;
