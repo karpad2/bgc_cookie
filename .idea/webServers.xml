@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="236e7cf4-5e7e-4297-82ee-bff33f5204ec" name="bgc_cookie" url="http://dev.bgcteambuilding.hu">
+        <fileTransfer rootFolder="/themes/bgc_cookie" host="ftp.boardgamecafe.hu" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
