@@ -42,31 +42,54 @@ window.addEventListener('load', ()=>{
     }
     let form=$("webform-submission-contact-block-content-8-add-form");
     console.log(form);
+
     let iform=document.createElement("div");
     iform.id="iform-content-8";
     form.insertBefore(iform,$("edit-actions--2"));
     iform.innerHTML="<div class=\"field field--name-field-contact-form field--type-webform field--label-hidden field__item\">" +
         //"<form class=\"webform-submission-form webform-submission-add-form webform-submission-contact-form webform-submission-contact-add-form webform-submission-contact-block_content-8-form webform-submission-contact-block_content-8-add-form formcontact row form-inputs contact-css js-webform-details-toggle webform-details-toggle\" data-drupal-selector=\"webform-submission-contact-block-content-8-add-form\" action=\"/\" method=\"post\" id=\"webform-submission-contact-block-content-8-add-form\" accept-charset=\"UTF-8\" data-drupal-form-fields=\"edit-lastname,edit-firstname,edit-message,edit-email,edit-actions-submit\">\n" +
         "<div class=\"form-group custom-form-group col-md-12 js-form-item form-item js-form-type-one-page form-type-one-page js-form-item-message form-item-message form-no-label\">\n" +
-        "        <input style=\"color: #aaa;border-radius: 30px; box-shadow: none; height: 52px; border: none;width: 100%; padding-left: 25px;padding-right: 25px;\" data-drupal-selector=\"edit-firstname\" type=\"text\" id=\"edit-firstname\" name=\"firstname\" value=\"\" size=\"60\" maxlength=\"255\" placeholder=\"Név\" class=\"form-text\">\n" +
+        "        <input style=\"color: #aaa;border-radius: 30px; box-shadow: none; height: 52px; border: none;width: 100%; padding-left: 25px;padding-right: 25px;\" data-drupal-selector=\"edit-firstname\" type=\"text\" id=\"edit-name\" name=\"nev\" value=\"\" size=\"60\" maxlength=\"255\" placeholder=\"Név\" class=\"form-text\">\n" +
         "\n" +
         "        </div>\n" +
         "<div class=\"form-group custom-form-group col-md-12 js-form-item form-item js-form-type-one-page form-type-one-page js-form-item-message form-item-message form-no-label\">\n" +
-        "        <input style=\"color: #aaa;border-radius: 30px; box-shadow: none; height: 52px; border: none;width: 100%; padding-left: 25px;padding-right: 25px;\" data-drupal-selector=\"edit-email\" type=\"email\" id=\"edit-email\" name=\"email\" value=\"\" size=\"60\" maxlength=\"254\" placeholder=\"Email cím\" class=\"form-email\">\n" +
+        "        <input style=\"color: #aaa;border-radius: 30px; box-shadow: none; height: 52px; border: none;width: 100%; padding-left: 25px;padding-right: 25px;\" data-drupal-selector=\"edit-email\" type=\"email\" id=\"edit-email\" name=\"email_cim\" value=\"\" size=\"60\" maxlength=\"254\" placeholder=\"Email cím\" class=\"form-email\">\n" +
         "\n" +
         "        </div>\n" +
         "<div class=\"form-group custom-form-group col-md-12 js-form-item form-item js-form-type-one-page form-type-one-page js-form-item-message form-item-message form-no-label\">\n" +
         "        <div class=\"form-textarea-wrapper\">\n" +
-        "  <textarea data-drupal-selector=\"edit-message\" id=\"edit-message\" name=\"message\" rows=\"7\" cols=\"60\" placeholder=\"Üzenet\" class=\"form-textarea resize-vertical\"></textarea>\n" +
+        "  <textarea data-drupal-selector=\"edit-message\" id=\"edit-message\" name=\"uzenet\" rows=\"7\" cols=\"60\" placeholder=\"Üzenet\" class=\"form-textarea resize-vertical\"></textarea>\n" +
         "</div>\n" +
         "\n" +
         "        </div>\n" +
         "<div class=\"form-group custom-form-group col-md-12 js-form-item form-item js-form-type-one-page form-type-one-page js-form-item-message form-item-message form-no-label\">\n" +
-        "<input class=\"webform-button--submit custom-button contact-btn button button--primary js-form-submit form-submit\" style=\"border-radius: 30px; box-shadow: none; height: 52px; border: none;width: 100%; padding-left: 25px;padding-right: 25px;\" data-drupal-selector=\"edit-actions-submit\" type=\"submit\" id=\"edit-actions-submit\" name=\"op\" value=\"Üzenet küldése\">\n" +
+        "<input class=\"webform-button--submit custom-button contact-btn button button--primary js-form-submit form-submit\" style=\"border-radius: 30px; box-shadow: none; height: 52px; border: none;width: 100%; padding-left: 25px;padding-right: 25px;\" data-drupal-selector=\"edit-actions-submit\" type=\"submit\" id=\"edit-actions-submit-form\" name=\"op\" value=\"Üzenet küldése\">\n" +
         "\n" +
         "</div>"+
     "";
-    $("edit-actions--2").style.display="none";
+    $("edit-submit").style.display="none";
+
+    $("webform-submission-contact-block-content-8-add-form").action="#";
+    let aform= $("webform-submission-contact-block-content-8-add-form").childNodes;
+    console.log(aform);
+    $("webform-submission-contact-block-content-8-add-form").addEventListener("submit",(e)=>{
+        console.log("A");
+        e.preventDefault();
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", 'http://dev.bgcteambuilding.hu/hu/form/uzenetek?ajax_form=1&_wrapper_format=drupal_ajax', true);
+        //Send the proper header information along with the request
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+        xhr.onreadystatechange = function() { // Call a function when the state changes.
+            if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                // Request finished. Do processing here.
+                console.log("Form sended");
+            }
+        }
+        let message="nev="+$("edit-name").value+"&email="+$("edit-email").value+"&uzenet="+$("edit-message").value+"&form_build_id=form-gX00IKWAGENyGN3-GRr9cNz--PwTQRnUsFf7z27pMRs&form_id=webform_submission_uzenetek_add_form&form_token=";
+        xhr.send(message);
+        //console.log(message);
+    });
 
 })
 function saveconsent(_t)
