@@ -72,6 +72,7 @@ window.addEventListener('load', ()=>{
     $("webform-submission-contact-block-content-8-add-form").action="#";
     let aform= $("webform-submission-contact-block-content-8-add-form").childNodes;
     console.log(aform);
+
     $("webform-submission-contact-block-content-8-add-form").addEventListener("submit",(e)=>{
         console.log("A");
         e.preventDefault();
