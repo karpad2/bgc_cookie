@@ -1,10 +1,14 @@
 function $ (id){
     return document.getElementById(id);
 }
-
+function saveconsent(_t)
+{
+    if(_t==true) localStorage.setItem("cookie-warner","1");
+    document.getElementById("cookie_banner").style.display="none";
+}
 window.addEventListener('load', ()=>{
     let styleSheet=document.createElement("link");
-    styleSheet.href="https://karpad2.github.io/bgc_cookie/cookie.css";
+    styleSheet.href="http://dev.bgcteambuilding.hu/themes/bgc_cookie/cookie.css";
     styleSheet.type="text/css";
     styleSheet.rel="stylesheet";
     let x = localStorage.getItem("cookie-warner");
@@ -42,12 +46,11 @@ window.addEventListener('load', ()=>{
     }
     let form=$("webform-submission-contact-block-content-8-add-form");
     console.log(form);
-
+    $("edit-submit").remove();
     let iform=document.createElement("div");
     iform.id="iform-content-8";
     form.insertBefore(iform,$("edit-actions--2"));
     iform.innerHTML="<div class=\"field field--name-field-contact-form field--type-webform field--label-hidden field__item\">" +
-        //"<form class=\"webform-submission-form webform-submission-add-form webform-submission-contact-form webform-submission-contact-add-form webform-submission-contact-block_content-8-form webform-submission-contact-block_content-8-add-form formcontact row form-inputs contact-css js-webform-details-toggle webform-details-toggle\" data-drupal-selector=\"webform-submission-contact-block-content-8-add-form\" action=\"/\" method=\"post\" id=\"webform-submission-contact-block-content-8-add-form\" accept-charset=\"UTF-8\" data-drupal-form-fields=\"edit-lastname,edit-firstname,edit-message,edit-email,edit-actions-submit\">\n" +
         "<div class=\"form-group custom-form-group col-md-12 js-form-item form-item js-form-type-one-page form-type-one-page js-form-item-message form-item-message form-no-label\">\n" +
         "        <input style=\"color: #aaa;border-radius: 30px; box-shadow: none; height: 52px; border: none;width: 100%; padding-left: 25px;padding-right: 25px;\" data-drupal-selector=\"edit-firstname\" type=\"text\" id=\"edit-name\" name=\"nev\" value=\"\" size=\"60\" maxlength=\"255\" placeholder=\"Név\" class=\"form-text\">\n" +
         "\n" +
@@ -67,14 +70,20 @@ window.addEventListener('load', ()=>{
         "\n" +
         "</div>"+
     "";
-    $("edit-submit").style.display="none";
-
     $("webform-submission-contact-block-content-8-add-form").action="#";
-    let aform= $("webform-submission-contact-block-content-8-add-form").childNodes;
-    console.log(aform);
-
+    //let form_token= $("webform-submission-contact-block-content-8-add-form").childNodes[3];
+    //console.log(form_token);
+    let message_= new XMLHttpRequest();
+    message_.open("GET","http://dev.bgcteambuilding.hu/hu/form/uzenetek");
+    message_.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+    let token=null;
+    message_.onreadystatechange = function() { // Call a function when the state changes.
+        if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+            token = this.responseXML.getElementById("webform-submission-uzenetek-add-form").childNodes[3];
+            console.log("token:"+token);
+        }
+    }
     $("webform-submission-contact-block-content-8-add-form").addEventListener("submit",(e)=>{
-        console.log("A");
         e.preventDefault();
         var xhr = new XMLHttpRequest();
         xhr.open("POST", 'http://dev.bgcteambuilding.hu/hu/form/uzenetek?ajax_form=1&_wrapper_format=drupal_ajax', true);
@@ -87,14 +96,9 @@ window.addEventListener('load', ()=>{
                 console.log("Form sended");
             }
         }
-        let message="nev="+$("edit-name").value+"&email="+$("edit-email").value+"&uzenet="+$("edit-message").value+"&form_build_id=form-gX00IKWAGENyGN3-GRr9cNz--PwTQRnUsFf7z27pMRs&form_id=webform_submission_uzenetek_add_form&form_token=";
+        let message="nev="+$("edit-name").value + "&email="+$("edit-email").value +"&uzenet=" + $("edit-message").value + "&form_build_id=form-gX00IKWAGENyGN3-GRr9cNz--PwTQRnUsFf7z27pMRs&form_id=webform_submission_uzenetek_add_form&form_token="+form_token.value;
         xhr.send(message);
-        //console.log(message);
+        console.log(message);
     });
 
 })
-function saveconsent(_t)
-{
-    if(_t==true) localStorage.setItem("cookie-warner","1");
-    document.getElementById("cookie_banner").style.display="none";
-}
