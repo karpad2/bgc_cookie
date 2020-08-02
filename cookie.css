@@ -8,6 +8,31 @@
 .trust-widget-open:focus, button:focus {
     outline: 1px solid !important;
 }
+#webform-submission-uzenetek-add-form label
+{
+    display: none;
+}
+#webform-submission-uzenetek-add-form input[type="text"]
+{
+    color: #aaa;border-radius: 30px; box-shadow: none; height: 52px; border: none;width: 100%; padding-left: 25px;padding-right: 25px;
+}
+#webform-submission-uzenetek-add-form input[type="email"]
+{
+    color: #aaa;border-radius: 30px; box-shadow: none; height: 52px; border: none;width: 100%; padding-left: 25px;padding-right: 25px;
+}
+#webform-submission-uzenetek-add-form input[type="submit"]
+{
+    border-radius: 30px; box-shadow: none; height: 52px; border: none;width: 100%; padding-left: 25px;padding-right: 25px;
+    background: #9acd32;
+    color: white;
+    font:400 20px Arial;
+}
+/*
+#webform-submission-uzenetek-add-form textarea
+{
+    border-radius: 30px; box-shadow: none; height: 52px; border: none;width: 100%; padding-left: 25px;padding-right: 25px;
+
+}*/
 
 .cookie-consent-group {
     height: 30px;
